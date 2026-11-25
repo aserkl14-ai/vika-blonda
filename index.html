@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Видосики Вики Блонды</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #0d0d0d;
+    color: #f0f0f0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 12px 40px;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 28px;
+  }
+
+  h1 {
+    font-size: 1.7rem;
+    color: #ff8c00;
+    letter-spacing: 1px;
+    text-shadow: 0 0 12px rgba(255, 140, 0, 0.5);
+    margin-bottom: 6px;
+  }
+
+  header p {
+    font-size: 0.85rem;
+    color: #999;
+  }
+
+  /* Сетка: 1 колонка на телефоне, 2 на планшете/ПК */
+  .videos {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    width: 100%;
+    max-width: 900px;
+  }
+
+  @media (min-width: 700px) {
+    .videos { grid-template-columns: 1fr 1fr; }
+  }
+
+  .card {
+    background: #1a1a1a;
+    border: 1px solid #2e2e2e;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+
+  .card:hover {
+    transform: translateY(-3px);
+    border-color: #ff8c00;
+  }
+
+  .card video {
+    width: 100%;
+    display: block;
+    background: #000;
+  }
+
+  .card .title {
+    padding: 10px 14px;
+    font-size: 0.95rem;
+    color: #ffb347;
+    border-top: 1px solid #2e2e2e;
+  }
+
+  footer {
+    margin-top: 36px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #888;
+  }
+
+  footer a {
+    color: #ff8c00;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  footer a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+  <header>
+    <h1>Видосики Вики Блонды</h1>
+    <p>Смотрим и наслаждаемся 😎</p>
+  </header>
+
+  <main class="videos">
+
+    <div class="card">
+      <video controls preload="metadata" playsinline>
+        <source src="video1.mp4" type="video/mp4">
+        Твой браузер не поддерживает видео.
+      </video>
+      <div class="title">Видео 1</div>
+    </div>
+
+    <div class="card">
+      <video controls preload="metadata" playsinline>
+        <source src="video2.mp4" type="video/mp4">
+        Твой браузер не поддерживает видео.
+      </video>
+      <div class="title">Видео 2</div>
+    </div>
+
+    <div class="card">
+      <video controls preload="metadata" playsinline>
+        <source src="video3.mp4" type="video/mp4">
+        Твой браузер не поддерживает видео.
+      </video>
+      <div class="title">Видео 3</div>
+    </div>
+
+    <div class="card">
+      <video controls preload="metadata" playsinline>
+        <source src="video4.mp4" type="video/mp4">
+        Твой браузер не поддерживает видео.
+      </video>
+      <div class="title">Видео 4</div>
+    </div>
+
+  </main>
+
+  <footer>
+    Создатель: <a href="https://t.me/skalibaza" target="_blank">@skalibaza</a>
+  </footer>
+
+</body>
+</html>
