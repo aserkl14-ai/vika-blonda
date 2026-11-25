@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Видосики Вики Блонды</title>
+<title>Видосики и Фоточки Вики Блонды</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -15,28 +15,39 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px 12px 40px;
+    padding: 20px 12px 60px;
   }
 
   header {
     text-align: center;
-    margin-bottom: 28px;
+    margin-bottom: 30px;
   }
 
   h1 {
-    font-size: 1.7rem;
+    font-size: 1.8rem;
     color: #ff8c00;
     letter-spacing: 1px;
-    text-shadow: 0 0 12px rgba(255, 140, 0, 0.5);
-    margin-bottom: 6px;
+    text-shadow: 0 0 12px rgba(255, 140, 0, 0.6);
+    margin-bottom: 8px;
   }
 
   header p {
-    font-size: 0.85rem;
-    color: #999;
+    font-size: 0.9rem;
+    color: #aaa;
   }
 
-  /* Сетка: 1 колонка на телефоне, 2 на планшете/ПК */
+  h2 {
+    font-size: 1.4rem;
+    color: #ff8c00;
+    margin: 30px 0 15px;
+    text-align: center;
+    border-bottom: 2px solid #2e2e2e;
+    padding-bottom: 8px;
+    width: 100%;
+    max-width: 900px;
+  }
+
+  /* Сетка для видео: 1 колонка на телефоне, 2 на ПК */
   .videos {
     display: grid;
     grid-template-columns: 1fr;
@@ -66,6 +77,7 @@
     width: 100%;
     display: block;
     background: #000;
+    cursor: pointer;
   }
 
   .card .title {
@@ -75,20 +87,71 @@
     border-top: 1px solid #2e2e2e;
   }
 
-  footer {
-    margin-top: 36px;
-    text-align: center;
-    font-size: 0.85rem;
-    color: #888;
+  /* Сетка для картинок */
+  .photos {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 колонки на телефоне для фото */
+    gap: 12px;
+    width: 100%;
+    max-width: 900px;
   }
 
-  footer a {
-    color: #ff8c00;
+  @media (min-width: 700px) {
+    .photos { grid-template-columns: repeat(4, 1fr); } /* 4 колонки на ПК */
+  }
+
+  .photo-card {
+    background: #1a1a1a;
+    border: 1px solid #2e2e2e;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+
+  .photo-card:hover {
+    transform: translateY(-3px);
+    border-color: #ff8c00;
+  }
+
+  .photo-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Кнопка Telegram */
+  .tg-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 50px;
+    background: linear-gradient(135deg, #ff8c00, #ff5e00);
+    color: #fff;
     text-decoration: none;
-    font-weight: 600;
+    padding: 16px 32px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(255, 94, 0, 0.4);
+    transition: all 0.3s;
+    width: 90%;
+    max-width: 400px;
   }
 
-  footer a:hover { text-decoration: underline; }
+  .tg-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 94, 0, 0.6);
+  }
+
+  footer {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #666;
+  }
 </style>
 </head>
 <body>
@@ -98,45 +161,104 @@
     <p>Смотрим и наслаждаемся 😎</p>
   </header>
 
+  <h2>🎬 Видео</h2>
   <main class="videos">
 
     <div class="card">
-      <video controls preload="metadata" playsinline>
+      <video controls preload="metadata" playsinline class="my-video">
         <source src="video1.mp4" type="video/mp4">
-        Твой браузер не поддерживает видео.
       </video>
       <div class="title">Видео 1</div>
     </div>
 
     <div class="card">
-      <video controls preload="metadata" playsinline>
+      <video controls preload="metadata" playsinline class="my-video">
         <source src="video2.mp4" type="video/mp4">
-        Твой браузер не поддерживает видео.
       </video>
       <div class="title">Видео 2</div>
     </div>
 
     <div class="card">
-      <video controls preload="metadata" playsinline>
+      <video controls preload="metadata" playsinline class="my-video">
         <source src="video3.mp4" type="video/mp4">
-        Твой браузер не поддерживает видео.
       </video>
       <div class="title">Видео 3</div>
     </div>
 
     <div class="card">
-      <video controls preload="metadata" playsinline>
+      <video controls preload="metadata" playsinline class="my-video">
         <source src="video4.mp4" type="video/mp4">
-        Твой браузер не поддерживает видео.
       </video>
       <div class="title">Видео 4</div>
     </div>
 
+    <div class="card">
+      <video controls preload="metadata" playsinline class="my-video">
+        <source src="video5.mp4" type="video/mp4">
+      </video>
+      <div class="title">Видео 5</div>
+    </div>
+
+    <div class="card">
+      <video controls preload="metadata" playsinline class="my-video">
+        <source src="video6.mp4" type="video/mp4">
+      </video>
+      <div class="title">Видео 6</div>
+    </div>
+
   </main>
 
+  <h2>📸 Крутые фотки Вики блондуси</h2>
+  <main class="photos">
+    <div class="photo-card">
+      <img src="kart1.jpg" alt="Фотка 1">
+    </div>
+    <div class="photo-card">
+      <img src="kart2.jpg" alt="Фотка 2">
+    </div>
+    <div class="photo-card">
+      <img src="kart3.jpg" alt="Фотка 3">
+    </div>
+    <div class="photo-card">
+      <img src="kart4.jpg" alt="Фотка 4">
+    </div>
+  </main>
+
+  <!-- Заметная кнопка ТГ -->
+  <a href="https://t.me/skalibaza" target="_blank" class="tg-btn">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+    Наш Telegram
+  </a>
+
   <footer>
-    Создатель: <a href="https://t.me/skalibaza" target="_blank">@skalibaza</a>
+    Создатель: @skalibaza
   </footer>
 
+  <!-- Скрипт для остановки видео при переключении или клике на фото -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const videos = document.querySelectorAll('.my-video');
+
+      // 1. Если включаем одно видео — ставим на паузу все остальные
+      videos.forEach(video => {
+        video.addEventListener('play', () => {
+          videos.forEach(v => {
+            if (v !== video) {
+              v.pause();
+            }
+          });
+        });
+      });
+
+      // 2. Если нажимаем на фотку — останавливаем все видео
+      const photos = document.querySelectorAll('.photo-card');
+      photos.forEach(photo => {
+        photo.addEventListener('click', () => {
+          videos.forEach(v => v.pause());
+        });
+      });
+    });
+  </script>
+
 </body>
-</html>
+ </html>
