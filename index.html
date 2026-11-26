@@ -47,7 +47,6 @@
     max-width: 900px;
   }
 
-  /* Сетка для видео: 1 колонка на телефоне, 2 на ПК */
   .videos {
     display: grid;
     grid-template-columns: 1fr;
@@ -87,17 +86,16 @@
     border-top: 1px solid #2e2e2e;
   }
 
-  /* Сетка для картинок */
   .photos {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* 2 колонки на телефоне для фото */
+    grid-template-columns: 1fr 1fr;
     gap: 12px;
     width: 100%;
     max-width: 900px;
   }
 
   @media (min-width: 700px) {
-    .photos { grid-template-columns: repeat(4, 1fr); } /* 4 колонки на ПК */
+    .photos { grid-template-columns: repeat(4, 1fr); }
   }
 
   .photo-card {
@@ -121,7 +119,6 @@
     display: block;
   }
 
-  /* Кнопка Telegram */
   .tg-btn {
     display: flex;
     align-items: center;
@@ -159,6 +156,12 @@
   <header>
     <h1>Видосики Вики Блонды</h1>
     <p>Смотрим и наслаждаемся 😎</p>
+    
+    <!-- ДОБАВЛЕНА ПЛАШКА 18+ -->
+    <div style="margin-top: 15px; padding: 8px 15px; background: rgba(255, 140, 0, 0.2); border: 1px solid #ff8c00; border-radius: 8px; display: inline-block; font-weight: bold; color: #ff8c00; font-size: 0.9rem;">
+      🔞 Всем персонажам на сайте есть 18 лет
+    </div>
+    
   </header>
 
   <h2>🎬 Видео</h2>
@@ -224,22 +227,23 @@
     </div>
   </main>
 
-  <!-- Заметная кнопка ТГ -->
   <a href="https://t.me/skalibaza" target="_blank" class="tg-btn">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
     Наш Telegram
   </a>
 
   <footer>
-    Создатель: @skalibaza
+    Создатель: @skalibaza<br>
+    <!-- ДОБАВЛЕНА ПРИПИСКА ВНИЗУ -->
+    <span style="display: block; margin-top: 5px; font-size: 0.75rem; color: #888;">
+      * Все видео на сайте предназначены для лиц старше 18 лет.
+    </span>
   </footer>
 
-  <!-- Скрипт для остановки видео при переключении или клике на фото -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const videos = document.querySelectorAll('.my-video');
 
-      // 1. Если включаем одно видео — ставим на паузу все остальные
       videos.forEach(video => {
         video.addEventListener('play', () => {
           videos.forEach(v => {
@@ -250,7 +254,6 @@
         });
       });
 
-      // 2. Если нажимаем на фотку — останавливаем все видео
       const photos = document.querySelectorAll('.photo-card');
       photos.forEach(photo => {
         photo.addEventListener('click', () => {
